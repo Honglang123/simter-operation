@@ -42,6 +42,6 @@ class OperationDaoImpl @Autowired constructor(
   }
 
   override fun findTargetTypes(): Flux<String> {
-    TODO("not implemented")
+    return wrapper.fromIterable { blockDao.findTargetTypes() }
   }
 }
