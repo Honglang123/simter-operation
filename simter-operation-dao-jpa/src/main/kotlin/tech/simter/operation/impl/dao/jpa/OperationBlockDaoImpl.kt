@@ -98,4 +98,8 @@ internal class OperationBlockDaoImpl @Autowired constructor(
       (countQuery.singleResult as Number).toLong()
     )
   }
+
+  override fun findTargetTypes(): List<String> {
+    TODO("not implemented")
+  }
 }

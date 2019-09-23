@@ -1,6 +1,7 @@
 package tech.simter.operation.impl.dao.jpa
 
 import org.springframework.data.domain.Page
+import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 import tech.simter.operation.core.Operation
 import java.util.*
@@ -43,4 +44,11 @@ interface OperationBlockDao {
    * Return [Page<Operation>] order by [Operation.ts] desc.
    */
   fun find(targetTypes: List<String>? = null, pageNo: Int = 1, pageSize: Int = 25, search: String? = null): Page<Operation>
+
+  /**
+   * Find all targetType.
+   *
+   * Return all targetType or a empty list.
+   */
+  fun findTargetTypes(): List<String>
 }

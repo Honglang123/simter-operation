@@ -44,4 +44,11 @@ interface OperationDao {
    * Return [Page<Operation>] order by [Operation.ts] desc.
    */
   fun find(targetTypes: List<String>? = null, pageNo: Int = 1, pageSize: Int = 25, search: String? = null): Mono<Page<Operation>>
+
+  /**
+   * Find all targetType.
+   *
+   * Return all targetType order by [Operation.targetType] asc or [Flux.empty] if found nothing.
+   */
+  fun findTargetTypes(): Flux<String>
 }

@@ -40,4 +40,8 @@ class OperationDaoImpl @Autowired constructor(
   override fun find(targetTypes: List<String>?, pageNo: Int, pageSize: Int, search: String?): Mono<Page<Operation>> {
     return wrapper.fromCallable { blockDao.find(targetTypes, pageNo, pageSize, search) }
   }
+
+  override fun findTargetTypes(): Flux<String> {
+    TODO("not implemented")
+  }
 }
