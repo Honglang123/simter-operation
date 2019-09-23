@@ -88,4 +88,8 @@ class OperationServiceImpl @Autowired constructor(
       Mono.defer { dao.find(targetTypes, pageNo, pageSize, search) }
     )
   }
+
+  override fun findTargetTypes(): Flux<String> {
+    TODO("not implemented")
+  }
 }
